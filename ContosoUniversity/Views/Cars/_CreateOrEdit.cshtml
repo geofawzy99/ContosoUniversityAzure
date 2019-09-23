@@ -1,0 +1,25 @@
+﻿@model ContosoUniversity.DAL.SalesModel.Car
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="control-group">
+	@Html.LabelFor(model => model.ManufactureYear, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.ManufactureYear)
+		@Html.ValidationMessageFor(model => model.ManufactureYear)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.BrandId, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.BrandId)
+		@Html.ValidationMessageFor(model => model.BrandId)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.ModelName, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.ModelName)
+		@Html.ValidationMessageFor(model => model.ModelName)
+	</div>
+</div>

@@ -1,0 +1,32 @@
+﻿@model ContosoUniversity.DAL.SalesModel.Medicine
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="control-group">
+	@Html.LabelFor(model => model.ScentificName, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.ScentificName)
+		@Html.ValidationMessageFor(model => model.ScentificName)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.ExpireDate, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.ExpireDate)
+		@Html.ValidationMessageFor(model => model.ExpireDate)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.MedicalGroup, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.MedicalGroup)
+		@Html.ValidationMessageFor(model => model.MedicalGroup)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.BatchNo, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.BatchNo)
+		@Html.ValidationMessageFor(model => model.BatchNo)
+	</div>
+</div>

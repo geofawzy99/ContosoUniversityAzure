@@ -1,0 +1,56 @@
+﻿@model ContosoUniversity.DAL.SalesModel.ItemStore
+@{
+	ViewBag.Title = "Delete";
+}
+
+<ul class="breadcrumb">
+	<li><a href="\">Tables</a> <span class="divider">/</span></li>
+	<li>@Html.ActionLink("ItemStores", "Index", "ItemStores") <span class="divider">/</span></li>
+	<li class="active">Delete</li>
+</ul>
+<div class="row">
+	<div class="span4">
+		<table class="table table-bordered table-striped table-condensed table-hover pull-left">
+			<tr>
+				<td>@Html.LabelFor(x => x.MinLimit)</td>
+				<td>@Model.MinLimit</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(x => x.MaxLimit)</td>
+				<td>@Model.MaxLimit</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(x => x.Quantity)</td>
+				<td>@Model.Quantity</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(x => x.ItemId)</td>
+				<td>@Model.ItemId</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(x => x.StoreId)</td>
+				<td>@Model.StoreId</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(x => x.Item)</td>
+		<td>
+			<a href="@Url.Action("Details", "Items", new { Id = Model.ItemId })"><small>View</small></a>
+		</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(x => x.Store)</td>
+		<td>
+			<a href="@Url.Action("Details", "Stores", new { Id = Model.StoreId })"><small>View</small></a>
+		</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="row">
+	<div class="span4">
+@using (Html.BeginForm()) {
+		<input type="submit" value="Delete" class="btn btn-danger" />
+		@Html.ActionLink("Cancel", "Index", null, new { @class = "btn" })
+}
+	</div>
+</div>

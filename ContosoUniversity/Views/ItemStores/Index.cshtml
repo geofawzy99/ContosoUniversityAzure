@@ -1,0 +1,173 @@
+﻿@model ContosoUniversity.DAL.SalesModel.ItemStore
+@{
+	ViewBag.Title = "ItemStores";
+}
+
+<ul class="breadcrumb">
+	<li><a href="\">Tables</a> <span class="divider">/</span></li>
+	<li class="active">ItemStores</li>
+</ul>
+
+@{
+	Func<string, object> routeValuesSortBy = (sortBy) => new {
+		page = ViewBag.Page,
+		pageSize = ViewBag.PageSize,
+		sortBy = sortBy,
+		sortDesc = ViewBag.SortBy != sortBy || ViewBag.SortDesc != null && ViewBag.SortDesc == true ? null : (object)true
+		,
+		Id = ViewBag.Id,
+		Id = ViewBag.Id
+	};
+
+	Func<int, object> routeValuesPage = (page) => new {
+		page = page,
+		pageSize = ViewBag.PageSize,
+		sortBy = ViewBag.SortBy,
+		sortDesc = ViewBag.SortDesc
+		,
+		Id = ViewBag.Id,
+		Id = ViewBag.Id
+	};
+
+	Func<object, string> formatValue = (value) => {
+		if (value == null)
+			return string.Empty;
+		string strValue = Convert.ToString(value);
+		if (strValue.Length > 20)
+			strValue = strValue.Substring(0, 20) + "...";
+		return strValue;
+	};
+}
+
+<script type="text/javascript">
+	function submitFilterForm(index, value) {
+		var f = document.getElementById('filterform');
+		f.elements[index].value = value;
+		f.submit();
+	}
+</script>
+
+<div class="row">
+	<div class="span8">
+		<form id="filterform" method="GET">
+			<input type="hidden" name="Id" value="@ViewBag.Id">
+			<div class="btn-group">
+@if (ViewBag.SelectedItem == null) {
+				<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><small>Item</small> <span class="caret"></span></a>
+}
+else {
+				<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><small>Item: <strong>@formatValue(ViewBag.SelectedItem)</strong></small> <span class="caret"></span></a>
+}
+				<ul class="dropdown-menu">
+@foreach (SelectListItem item in ViewBag.Items) {
+					<li><a href="javascript:{}" onclick="submitFilterForm(0, '@item.Value');">@(item.Text ?? "[All]")</a></li>
+}
+				</ul>
+			</div>
+			<input type="hidden" name="Id" value="@ViewBag.Id">
+			<div class="btn-group">
+@if (ViewBag.SelectedStore == null) {
+				<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><small>Store</small> <span class="caret"></span></a>
+}
+else {
+				<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><small>Store: <strong>@formatValue(ViewBag.SelectedStore)</strong></small> <span class="caret"></span></a>
+}
+				<ul class="dropdown-menu">
+@foreach (SelectListItem item in ViewBag.Stores) {
+					<li><a href="javascript:{}" onclick="submitFilterForm(1, '@item.Value');">@(item.Text ?? "[All]")</a></li>
+}
+				</ul>
+			</div>
+		</form>
+	</div>
+	<div class="span4">
+		@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary pull-right" })
+	</div>
+</div>
+
+<table class="table table-bordered table-striped table-condensed table-hover">
+	<thead>
+		<tr>
+			<th></th>
+			<th>
+				<a href="@Url.Action("Index", routeValuesSortBy("Id"))"><small>@Html.DisplayNameFor(model => model.Id)</small></a>
+			</th>
+			<th>
+				<a href="@Url.Action("Index", routeValuesSortBy("MinLimit"))"><small>@Html.DisplayNameFor(model => model.MinLimit)</small></a>
+			</th>
+			<th>
+				<a href="@Url.Action("Index", routeValuesSortBy("MaxLimit"))"><small>@Html.DisplayNameFor(model => model.MaxLimit)</small></a>
+			</th>
+			<th>
+				<a href="@Url.Action("Index", routeValuesSortBy("Quantity"))"><small>@Html.DisplayNameFor(model => model.Quantity)</small></a>
+			</th>
+			<th>
+				<a href="@Url.Action("Index", routeValuesSortBy("ItemId"))"><small>@Html.DisplayNameFor(model => model.ItemId)</small></a>
+			</th>
+			<th>
+				<a href="@Url.Action("Index", routeValuesSortBy("StoreId"))"><small>@Html.DisplayNameFor(model => model.StoreId)</small></a>
+			</th>
+			<th>
+				<small>Item</small>
+			</th>
+			<th>
+				<small>Store</small>
+			</th>
+		</tr>
+	</thead>
+@foreach (var item in ViewBag.Entities) {
+	<tr>
+
+		<td>
+			<div class="btn-group">
+				<a href="@Url.Action("Edit", new { Id = item.Id })" class="btn btn-mini"><i class="icon-pencil"></i></a>
+				<a href="@Url.Action("Details", new { Id = item.Id })" class="btn btn-mini"><i class="icon-info-sign"></i></a>
+				<a href="@Url.Action("Delete", new { Id = item.Id })" class="btn btn-mini"><i class="icon-trash"></i></a>
+			</div>
+		</td>
+		<td>
+			<small>@formatValue(item.Id)</small>
+		</td>
+		<td>
+			<small>@formatValue(item.MinLimit)</small>
+		</td>
+		<td>
+			<small>@formatValue(item.MaxLimit)</small>
+		</td>
+		<td>
+			<small>@formatValue(item.Quantity)</small>
+		</td>
+		<td>
+			<small>@formatValue(item.ItemId)</small>
+		</td>
+		<td>
+			<small>@formatValue(item.StoreId)</small>
+		</td>
+		<td>
+			<a href="@Url.Action("Details", "Items", new { Id = item.ItemId })"><small>View</small></a>
+		</td>
+		<td>
+			<a href="@Url.Action("Details", "Stores", new { Id = item.StoreId })"><small>View</small></a>
+		</td>
+	</tr>
+}
+</table>
+
+@if (ViewBag.PaginationData != null) {
+	int currentPage = ViewData.ContainsKey("Page") ? ViewBag.Page : 1;
+<div>
+	<ul class="pagination pagination-centered pagination-small">
+	@foreach (Tuple<string, bool, int> pageTuple in ViewBag.PaginationData) {
+		if (!pageTuple.Item2) {
+			<li class="disabled"><span>@pageTuple.Item1</span></li>
+		}
+		else if (pageTuple.Item3 == currentPage) {
+			<li class="active"><span>@pageTuple.Item1</span></li>
+		}
+		else {
+			 <li ><a href="@Url.Action("Index", routeValuesPage(pageTuple.Item3))">@pageTuple.Item1</a></li>
+		}
+	}
+	</ul>
+</div>
+}

@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDeveloper Version="6.3.582.0">
+  <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" AppConnectionStringName="SalesConnectionString" ConnectionStringInAppConfig="True" RegenareteConnectionStringInAppConfig="True" TargetFramework="Net45" DetectTPTInheritance="False" EntityFrameworkVersion="Version6" IncludeForeignKeysInModel="true" DetectFunctionBasedColumnDefault="false">
+    <Connection ConnectionString="Data Source=georgeNote;Initial Catalog=SalesModelFirst;Integrated Security=False;Persist Security Info=True;User ID=sa;Password=sa" Provider="System.Data.SqlClient" />
+    <Generation>
+      <GeneratedFiles>
+        <File Name="SalesContext.cs" DestinationFolder="SalesContext" />
+        <File Name="Car.cs" DestinationFolder="SalesEntities" />
+        <File Name="SUV.cs" DestinationFolder="SalesEntities" />
+        <File Name="Salon.cs" DestinationFolder="SalesEntities" />
+        <File Name="Store.cs" DestinationFolder="SalesEntities" />
+        <File Name="Item.cs" DestinationFolder="SalesEntities" />
+        <File Name="Medicine.cs" DestinationFolder="SalesEntities" />
+        <File Name="Book.cs" DestinationFolder="SalesEntities" />
+        <File Name="Publisher.cs" DestinationFolder="SalesEntities" />
+        <File Name="Author.cs" DestinationFolder="SalesEntities" />
+        <File Name="ItemStore.cs" DestinationFolder="SalesEntities" />
+        <File Name="BookLangauge.cs" DestinationFolder="SalesEntities" />
+        <File Name="CarConfiguration.cs" DestinationFolder="DbConfiguration" />
+        <File Name="SUVConfiguration.cs" DestinationFolder="DbConfiguration" />
+        <File Name="SalonConfiguration.cs" DestinationFolder="DbConfiguration" />
+        <File Name="StoreConfiguration.cs" DestinationFolder="DbConfiguration" />
+        <File Name="ItemConfiguration.cs" DestinationFolder="DbConfiguration" />
+        <File Name="MedicineConfiguration.cs" DestinationFolder="DbConfiguration" />
+        <File Name="BookConfiguration.cs" DestinationFolder="DbConfiguration" />
+        <File Name="PublisherConfiguration.cs" DestinationFolder="DbConfiguration" />
+        <File Name="AuthorConfiguration.cs" DestinationFolder="DbConfiguration" />
+        <File Name="ItemStoreConfiguration.cs" DestinationFolder="DbConfiguration" />
+        <File Name="IUnitOfWork.cs" DestinationFolder="Repository" />
+        <File Name="IUnitOfWorkFactory.cs" DestinationFolder="Repository" />
+        <File Name="IRepository.cs" DestinationFolder="Repository" />
+        <File Name="ICarRepository.cs" DestinationFolder="Repository" />
+        <File Name="ISUVRepository.cs" DestinationFolder="Repository" />
+        <File Name="ISalonRepository.cs" DestinationFolder="Repository" />
+        <File Name="IStoreRepository.cs" DestinationFolder="Repository" />
+        <File Name="IItemRepository.cs" DestinationFolder="Repository" />
+        <File Name="IMedicineRepository.cs" DestinationFolder="Repository" />
+        <File Name="IBookRepository.cs" DestinationFolder="Repository" />
+        <File Name="IPublisherRepository.cs" DestinationFolder="Repository" />
+        <File Name="IAuthorRepository.cs" DestinationFolder="Repository" />
+        <File Name="IItemStoreRepository.cs" DestinationFolder="Repository" />
+        <File Name="EntityFrameworkRepository.cs" DestinationFolder="Repository" />
+        <File Name="EntityFrameworkUnitOfWork.cs" DestinationFolder="Repository" />
+        <File Name="EntityFrameworkUnitOfWorkFactory.cs" DestinationFolder="Repository" />
+        <File Name="Sales.CarRepository.cs" DestinationFolder="Repository" />
+        <File Name="Sales.SUVRepository.cs" DestinationFolder="Repository" />
+        <File Name="Sales.SalonRepository.cs" DestinationFolder="Repository" />
+        <File Name="Sales.StoreRepository.cs" DestinationFolder="Repository" />
+        <File Name="Sales.ItemRepository.cs" DestinationFolder="Repository" />
+        <File Name="Sales.MedicineRepository.cs" DestinationFolder="Repository" />
+        <File Name="Sales.BookRepository.cs" DestinationFolder="Repository" />
+        <File Name="Sales.PublisherRepository.cs" DestinationFolder="Repository" />
+        <File Name="Sales.AuthorRepository.cs" DestinationFolder="Repository" />
+        <File Name="Sales.ItemStoreRepository.cs" DestinationFolder="Repository" />
+        <File Name="CarDto.cs" DestinationFolder="DTo" />
+        <File Name="SUVDto.cs" DestinationFolder="DTo" />
+        <File Name="SalonDto.cs" DestinationFolder="DTo" />
+        <File Name="StoreDto.cs" DestinationFolder="DTo" />
+        <File Name="ItemDto.cs" DestinationFolder="DTo" />
+        <File Name="MedicineDto.cs" DestinationFolder="DTo" />
+        <File Name="BookDto.cs" DestinationFolder="DTo" />
+        <File Name="PublisherDto.cs" DestinationFolder="DTo" />
+        <File Name="AuthorDto.cs" DestinationFolder="DTo" />
+        <File Name="ItemStoreDto.cs" DestinationFolder="DTo" />
+        <File Name="SUVConverter.cs" DestinationFolder="DToConverters" />
+        <File Name="SalonConverter.cs" DestinationFolder="DToConverters" />
+        <File Name="StoreConverter.cs" DestinationFolder="DToConverters" />
+        <File Name="ItemConverter.cs" DestinationFolder="DToConverters" />
+        <File Name="MedicineConverter.cs" DestinationFolder="DToConverters" />
+        <File Name="BookConverter.cs" DestinationFolder="DToConverters" />
+        <File Name="PublisherConverter.cs" DestinationFolder="DToConverters" />
+        <File Name="AuthorConverter.cs" DestinationFolder="DToConverters" />
+        <File Name="ItemStoreConverter.cs" DestinationFolder="DToConverters" />
+        <File Name="SalesContextController.cs" DestinationFolder="..\Controller" />
+        <File Name="CarsController.cs" DestinationFolder="..\Controller" OverwriteMode="None" />
+        <File Name="SUVsController.cs" DestinationFolder="..\Controller" OverwriteMode="None" />
+        <File Name="SalonsController.cs" DestinationFolder="..\Controller" OverwriteMode="None" />
+        <File Name="StoresController.cs" DestinationFolder="..\Controller" OverwriteMode="None" />
+        <File Name="ItemsController.cs" DestinationFolder="..\Controller" OverwriteMode="None" />
+        <File Name="MedicinesController.cs" DestinationFolder="..\Controller" OverwriteMode="None" />
+        <File Name="BooksController.cs" DestinationFolder="..\Controller" OverwriteMode="None" />
+        <File Name="PublishersController.cs" DestinationFolder="..\Controller" OverwriteMode="None" />
+        <File Name="AuthorsController.cs" DestinationFolder="..\Controller" OverwriteMode="None" />
+        <File Name="ItemStoresController.cs" DestinationFolder="..\Controller" OverwriteMode="None" />
+        <File Name="Index.cshtml" ProjectFolder="Views\SalesContext" DestinationFolder="..\Views\SalesContext" OverwriteMode="None" />
+        <File Name="Index.cshtml" ProjectFolder="Views\Cars" DestinationFolder="..\Views\Cars" OverwriteMode="None" />
+        <File Name="Details.cshtml" ProjectFolder="Views\Cars" DestinationFolder="..\Views\Cars" OverwriteMode="None" />
+        <File Name="_CreateOrEdit.cshtml" ProjectFolder="Views\Cars" DestinationFolder="..\Views\Cars" OverwriteMode="None" />
+        <File Name="Create.cshtml" ProjectFolder="Views\Cars" DestinationFolder="..\Views\Cars" OverwriteMode="None" />
+        <File Name="Edit.cshtml" ProjectFolder="Views\Cars" DestinationFolder="..\Views\Cars" OverwriteMode="None" />
+        <File Name="Delete.cshtml" ProjectFolder="Views\Cars" DestinationFolder="..\Views\Cars" OverwriteMode="None" />
+        <File Name="Index.cshtml" ProjectFolder="Views\SUVs" DestinationFolder="..\Views\SUVs" OverwriteMode="None" />
+        <File Name="Details.cshtml" ProjectFolder="Views\SUVs" DestinationFolder="..\Views\SUVs" OverwriteMode="None" />
+        <File Name="_CreateOrEdit.cshtml" ProjectFolder="Views\SUVs" DestinationFolder="..\Views\SUVs" OverwriteMode="None" />
+        <File Name="Create.cshtml" ProjectFolder="Views\SUVs" DestinationFolder="..\Views\SUVs" OverwriteMode="None" />
+        <File Name="Edit.cshtml" ProjectFolder="Views\SUVs" DestinationFolder="..\Views\SUVs" OverwriteMode="None" />
+        <File Name="Delete.cshtml" ProjectFolder="Views\SUVs" DestinationFolder="..\Views\SUVs" OverwriteMode="None" />
+        <File Name="Index.cshtml" ProjectFolder="Views\Salons" DestinationFolder="..\Views\Salons" OverwriteMode="None" />
+        <File Name="Details.cshtml" ProjectFolder="Views\Salons" DestinationFolder="..\Views\Salons" OverwriteMode="None" />
+        <File Name="_CreateOrEdit.cshtml" ProjectFolder="Views\Salons" DestinationFolder="..\Views\Salons" OverwriteMode="None" />
+        <File Name="Create.cshtml" ProjectFolder="Views\Salons" DestinationFolder="..\Views\Salons" OverwriteMode="None" />
+        <File Name="Edit.cshtml" ProjectFolder="Views\Salons" DestinationFolder="..\Views\Salons" OverwriteMode="None" />
+        <File Name="Delete.cshtml" ProjectFolder="Views\Salons" DestinationFolder="..\Views\Salons" OverwriteMode="None" />
+        <File Name="Index.cshtml" ProjectFolder="Views\Stores" DestinationFolder="..\Views\Stores" OverwriteMode="None" />
+        <File Name="Details.cshtml" ProjectFolder="Views\Stores" DestinationFolder="..\Views\Stores" OverwriteMode="None" />
+        <File Name="_CreateOrEdit.cshtml" ProjectFolder="Views\Stores" DestinationFolder="..\Views\Stores" OverwriteMode="None" />
+        <File Name="Create.cshtml" ProjectFolder="Views\Stores" DestinationFolder="..\Views\Stores" OverwriteMode="None" />
+        <File Name="Edit.cshtml" ProjectFolder="Views\Stores" DestinationFolder="..\Views\Stores" OverwriteMode="None" />
+        <File Name="Delete.cshtml" ProjectFolder="Views\Stores" DestinationFolder="..\Views\Stores" OverwriteMode="None" />
+        <File Name="Index.cshtml" ProjectFolder="Views\Items" DestinationFolder="..\Views\Items" OverwriteMode="None" />
+        <File Name="Details.cshtml" ProjectFolder="Views\Items" DestinationFolder="..\Views\Items" OverwriteMode="None" />
+        <File Name="_CreateOrEdit.cshtml" ProjectFolder="Views\Items" DestinationFolder="..\Views\Items" OverwriteMode="None" />
+        <File Name="Create.cshtml" ProjectFolder="Views\Items" DestinationFolder="..\Views\Items" OverwriteMode="None" />
+        <File Name="Edit.cshtml" ProjectFolder="Views\Items" DestinationFolder="..\Views\Items" OverwriteMode="None" />
+        <File Name="Delete.cshtml" ProjectFolder="Views\Items" DestinationFolder="..\Views\Items" OverwriteMode="None" />
+        <File Name="Index.cshtml" ProjectFolder="Views\Medicines" DestinationFolder="..\Views\Medicines" OverwriteMode="None" />
+        <File Name="Details.cshtml" ProjectFolder="Views\Medicines" DestinationFolder="..\Views\Medicines" OverwriteMode="None" />
+        <File Name="_CreateOrEdit.cshtml" ProjectFolder="Views\Medicines" DestinationFolder="..\Views\Medicines" OverwriteMode="None" />
+        <File Name="Create.cshtml" ProjectFolder="Views\Medicines" DestinationFolder="..\Views\Medicines" OverwriteMode="None" />
+        <File Name="Edit.cshtml" ProjectFolder="Views\Medicines" DestinationFolder="..\Views\Medicines" OverwriteMode="None" />
+        <File Name="Delete.cshtml" ProjectFolder="Views\Medicines" DestinationFolder="..\Views\Medicines" OverwriteMode="None" />
+        <File Name="Index.cshtml" ProjectFolder="Views\Books" DestinationFolder="..\Views\Books" OverwriteMode="None" />
+        <File Name="Details.cshtml" ProjectFolder="Views\Books" DestinationFolder="..\Views\Books" OverwriteMode="None" />
+        <File Name="_CreateOrEdit.cshtml" ProjectFolder="Views\Books" DestinationFolder="..\Views\Books" OverwriteMode="None" />
+        <File Name="Create.cshtml" ProjectFolder="Views\Books" DestinationFolder="..\Views\Books" OverwriteMode="None" />
+        <File Name="Edit.cshtml" ProjectFolder="Views\Books" DestinationFolder="..\Views\Books" OverwriteMode="None" />
+        <File Name="Delete.cshtml" ProjectFolder="Views\Books" DestinationFolder="..\Views\Books" OverwriteMode="None" />
+        <File Name="Index.cshtml" ProjectFolder="Views\Publishers" DestinationFolder="..\Views\Publishers" OverwriteMode="None" />
+        <File Name="Details.cshtml" ProjectFolder="Views\Publishers" DestinationFolder="..\Views\Publishers" OverwriteMode="None" />
+        <File Name="_CreateOrEdit.cshtml" ProjectFolder="Views\Publishers" DestinationFolder="..\Views\Publishers" OverwriteMode="None" />
+        <File Name="Create.cshtml" ProjectFolder="Views\Publishers" DestinationFolder="..\Views\Publishers" OverwriteMode="None" />
+        <File Name="Edit.cshtml" ProjectFolder="Views\Publishers" DestinationFolder="..\Views\Publishers" OverwriteMode="None" />
+        <File Name="Delete.cshtml" ProjectFolder="Views\Publishers" DestinationFolder="..\Views\Publishers" OverwriteMode="None" />
+        <File Name="Index.cshtml" ProjectFolder="Views\Authors" DestinationFolder="..\Views\Authors" OverwriteMode="None" />
+        <File Name="Details.cshtml" ProjectFolder="Views\Authors" DestinationFolder="..\Views\Authors" OverwriteMode="None" />
+        <File Name="_CreateOrEdit.cshtml" ProjectFolder="Views\Authors" DestinationFolder="..\Views\Authors" OverwriteMode="None" />
+        <File Name="Create.cshtml" ProjectFolder="Views\Authors" DestinationFolder="..\Views\Authors" OverwriteMode="None" />
+        <File Name="Edit.cshtml" ProjectFolder="Views\Authors" DestinationFolder="..\Views\Authors" OverwriteMode="None" />
+        <File Name="Delete.cshtml" ProjectFolder="Views\Authors" DestinationFolder="..\Views\Authors" OverwriteMode="None" />
+        <File Name="Index.cshtml" ProjectFolder="Views\ItemStores" DestinationFolder="..\Views\ItemStores" OverwriteMode="None" />
+        <File Name="Details.cshtml" ProjectFolder="Views\ItemStores" DestinationFolder="..\Views\ItemStores" OverwriteMode="None" />
+        <File Name="_CreateOrEdit.cshtml" ProjectFolder="Views\ItemStores" DestinationFolder="..\Views\ItemStores" OverwriteMode="None" />
+        <File Name="Create.cshtml" ProjectFolder="Views\ItemStores" DestinationFolder="..\Views\ItemStores" OverwriteMode="None" />
+        <File Name="Edit.cshtml" ProjectFolder="Views\ItemStores" DestinationFolder="..\Views\ItemStores" OverwriteMode="None" />
+        <File Name="Delete.cshtml" ProjectFolder="Views\ItemStores" DestinationFolder="..\Views\ItemStores" OverwriteMode="None" />
+      </GeneratedFiles>
+    </Generation>
+    <DatabaseFirstNamingRules>
+      <EntitySet PluralizationName="Pluralize" />
+      <Class UseSchemaAsPrefix="False" PluralizeCollectionNavigationPropertyName="True" AddConstraintColumnsToNavigationPropertyName="False" RemoveUnderscores="True" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="FirstLetterUppercase" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Singularize" />
+      <Property RemoveUnderscores="True" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="FirstLetterUppercase" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Unchanged" />
+    </DatabaseFirstNamingRules>
+    <ModelFirst StorageSynchronizationEnabled="True" TargetSchema="dbo" TargetProviderName="System.Data.SqlClient">
+      <TargetServer Server="SQL Server" ServerVersion="2008" />
+      <ModelFirstNamingRules>
+        <Table RemoveUnderscores="True" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="Unchanged" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Pluralize" />
+        <Column RemoveUnderscores="False" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="FirstLetterUppercase" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Unchanged" />
+      </ModelFirstNamingRules>
+    </ModelFirst>
+    <Diagrams>
+      <Diagram Name="Cars" DefaultDiagram="True" />
+      <Diagram Name="Sales" />
+    </Diagrams>
+    <Templates>
+      <Template Name="SalesContext" Description="Use this template to generate a strongly-typed DbContext class and persistence ignorant entity classes." Enabled="True" PredefinedTemplateName="Entity DbContext C#">
+        <ed:Property Name="ValidationFramework" Type="EntityDeveloper.TemplateEngine.ValidationFramework, EntityDeveloper.Common, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <ValidationFramework>DataAnnotations</ValidationFramework>
+        </ed:Property>
+        <ed:Property Name="ValidationErrorMessages" Type="EntityDeveloper.TemplateEngine.ValidationErrorMessages, EntityDeveloper.Common, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <ValidationErrorMessages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        </ed:Property>
+        <ed:Property Name="FilePerClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="ModelNameAsFilesPrefix" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="EntitiesOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder>SalesEntities</DestinationFolder>
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="ContextOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder>SalesContext</DestinationFolder>
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="GeneratePartialClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="ImplementCloneable" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="ImplementEquals" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="ImplementINotifyPropertyChanging" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="ImplementINotifyPropertyChanged" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="PropertyChangePartialMethods" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="WcfDataContractAttributes" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="WcfDataMemberOnNavigationProperties" Type="EntityDeveloper.WcfDataMemberGenerationBehavior, EntityDeveloper.Orm.Common, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <WcfDataMemberGenerationBehavior>All</WcfDataMemberGenerationBehavior>
+        </ed:Property>
+        <ed:Property Name="EnableWinFormsDataBinding" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="UseObservableCollection" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="FluentMapping" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="MappingGenerationStrategy" Type="EntityDeveloper.EntityFramework.CodeFirstMappingGenerationStrategy, EntityDeveloper.Orm.EntityFramework, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <CodeFirstMappingGenerationStrategy>UseConfigurationClasses</CodeFirstMappingGenerationStrategy>
+        </ed:Property>
+        <ed:Property Name="DatabaseIndependent" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="DisabledConventions" Type="EntityDeveloper.EntityFramework.CodeFirstConfigurationConvention, EntityDeveloper.Orm.EntityFramework, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <CodeFirstConfigurationConvention />
+        </ed:Property>
+        <ed:Property Name="ConfigurationsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder>DbConfiguration</DestinationFolder>
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="AutoDetectChangesEnabled" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="ProxyCreationEnabled" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="ValidateOnSaveEnabled" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+      </Template>
+      <Template Name="Repository And Unit of Work" Description="Use this template to generate Repositories and a Unit of Work for Entity Framework model." Enabled="True" PredefinedTemplateName="Repository And Unit of Work C#">
+        <ed:Property Name="InterfaceLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder>Repository</DestinationFolder>
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="DataAccessLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder>Repository</DestinationFolder>
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="InterfaceLayerNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>ContosoUniversity.DAL.SalesModel.Repository</string>
+        </ed:Property>
+        <ed:Property Name="DataAccessLayerNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>ContosoUniversity.DAL.SalesModel.Repository</string>
+        </ed:Property>
+        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="GenerateMemoryRepository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="UseDbContext" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="GenericRepositoryPattern" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="GeneratePartial" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+      </Template>
+      <Template Name="Data Transfer Object" Description="Use this template to generate Data Transfer Object (DTO) classes." Enabled="True" PredefinedTemplateName="Data Transfer Object C#">
+        <ed:Property Name="FilePerClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="DtosOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder>DTo</DestinationFolder>
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="ConvertersOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder>DToConverters</DestinationFolder>
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="GeneratePartialDtos" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="GeneratePartialConverters" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="DtoNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>ContosoUniversity.DAL.SalesModel.Dto</string>
+        </ed:Property>
+        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="DtoClassNamePrefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="DtoClassNameSuffix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Dto</string>
+        </ed:Property>
+        <ed:Property Name="WcfDataContractAttributes" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="WcfDataMemberOnNavigationProperties" Type="EntityDeveloper.WcfDataMemberGenerationBehavior, EntityDeveloper.Orm.Common, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <WcfDataMemberGenerationBehavior>All</WcfDataMemberGenerationBehavior>
+        </ed:Property>
+        <ed:Property Name="GenerateDtoConstructors" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="UseDtoClassesInAssociations" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="GenerateConverters" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="ConverterClassNamePrefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="ConverterClassNameSuffix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Converter</string>
+        </ed:Property>
+      </Template>
+      <Template Name="MVC Controller" Description="Use this template to generate a ASP.NET MVC controller with data access code." Enabled="False" PredefinedTemplateName="MVC Controller C#">
+        <ed:Property Name="Output" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder>..\Controllers</DestinationFolder>
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="Namespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>ContosoUniversity.DAL.SalesModel.Mvc</string>
+        </ed:Property>
+        <ed:Property Name="Version" Type="EntityDeveloper.TemplateEngine.MVCVersion, EntityDeveloper.Common, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <MVCVersion>MVC</MVCVersion>
+        </ed:Property>
+      </Template>
+      <Template Name="MVC View Advanced" Description="Use this template to generate a ASP.NET MVC view based on Twitter Bootstrap." Enabled="False" PredefinedTemplateName="MVC View Bootstrap C#">
+        <ed:Property Name="Output" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.3.582.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder>..\Views</DestinationFolder>
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="LayoutPage" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="UseJQueryValidation" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+      </Template>
+    </Templates>
+    <AttributeAssemblies />
+  </ModelSettings>
+</EntityDeveloper>

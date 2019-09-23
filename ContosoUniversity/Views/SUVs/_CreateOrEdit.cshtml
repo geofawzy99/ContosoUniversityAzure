@@ -1,0 +1,11 @@
+﻿@model ContosoUniversity.DAL.SalesModel.SUV
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="control-group">
+	@Html.LabelFor(model => model.SuvType, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.SuvType)
+		@Html.ValidationMessageFor(model => model.SuvType)
+	</div>
+</div>

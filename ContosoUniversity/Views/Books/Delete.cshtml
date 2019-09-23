@@ -1,0 +1,58 @@
+﻿@model ContosoUniversity.DAL.SalesModel.Book
+@{
+	ViewBag.Title = "Delete";
+}
+
+<ul class="breadcrumb">
+	<li><a href="\">Tables</a> <span class="divider">/</span></li>
+	<li>@Html.ActionLink("Books", "Index", "Books") <span class="divider">/</span></li>
+	<li class="active">Delete</li>
+</ul>
+<div class="row">
+	<div class="span4">
+        <table class="table table-bordered table-striped table-condensed table-hover pull-left">
+            <tr>
+                <td>@Html.LabelFor(x => x.Id)</td>
+                <td>@Model.Id</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.ArDescription)</td>
+                <td>@Model.ArDescription</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.EnDescription)</td>
+                <td>@Model.EnDescription</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.Category)</td>
+                <td>@Model.Category</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.Price)</td>
+                <td>@Model.ISBN</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.ISBN)</td>
+                <td>@Model.ISBN</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.PublisherId)</td>
+                <td>@Model.Publisher.Name</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.Langauge)</td>
+                <td>@Model.Langauge</td>
+            </tr>
+        </table>
+	</div>
+</div>
+<div class="row">
+    <div class="span4">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            @Html.ActionLink("Cancel", "Index", null, new { @class = "btn" })
+        }
+    </div>
+</div>

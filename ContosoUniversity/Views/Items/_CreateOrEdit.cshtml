@@ -1,0 +1,39 @@
+﻿@model ContosoUniversity.DAL.SalesModel.Item
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="control-group">
+	@Html.LabelFor(model => model.ArDescription, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.ArDescription)
+		@Html.ValidationMessageFor(model => model.ArDescription)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.EnDescription, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.EnDescription)
+		@Html.ValidationMessageFor(model => model.EnDescription)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.Category, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.Category)
+		@Html.ValidationMessageFor(model => model.Category)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.RowVersion, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.RowVersion)
+		@Html.ValidationMessageFor(model => model.RowVersion)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.Price, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.Price)
+		@Html.ValidationMessageFor(model => model.Price)
+	</div>
+</div>

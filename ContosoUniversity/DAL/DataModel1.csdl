@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" d1p1:ViewGeneration="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:devart="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" annotation:UseStrongSpatialTypes="false" xmlns:d1p1="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CarDealerContext" annotation:LazyLoadingEnabled="true" ed:Guid="c8fa8f7f-2428-40f0-801c-73ec78087e8e">
+    <EntitySet Name="Cars" EntityType="Model.Car" />
+    <EntitySet Name="Stores" EntityType="Model.Store" />
+    <EntitySet Name="Items" EntityType="Model.Item" />
+    <EntitySet Name="Publishers" EntityType="Model.Publisher" />
+    <EntitySet Name="Authors" EntityType="Model.Author" />
+    <EntitySet Name="ItemStores" EntityType="Model.ItemStore" />
+    <AssociationSet Name="Publisher_BookSet" Association="Model.Publisher_Book">
+      <End Role="Publisher" EntitySet="Publishers" />
+      <End Role="Books" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="Author_BookSet" Association="Model.Author_Book">
+      <End Role="Authors" EntitySet="Authors" />
+      <End Role="Books" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="Item_ItemStoreSet" Association="Model.Item_ItemStore">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="ItemStores" EntitySet="ItemStores" />
+    </AssociationSet>
+    <AssociationSet Name="Store_ItemStoreSet" Association="Model.Store_ItemStore">
+      <End Role="Store" EntitySet="Stores" />
+      <End Role="ItemStores" EntitySet="ItemStores" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Car" devart:InheritanceModifier="Abstract" Abstract="true" ed:Guid="fce66017-9515-4697-923b-da9ec1126216">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="a3f9d044-6762-4ed3-b1c7-7f6e13488e15" />
+    <Property Name="ManufactureYear" Type="Int32" ed:ValidateRequired="false" ed:Guid="ef09920a-9217-4bb4-9459-4b7dcf0e2f5a" />
+    <Property Name="BrandId" Type="Int32" ed:ValidateRequired="false" ed:Guid="58a6a317-c06f-48bb-b4fc-16b078cc2a80" />
+    <Property Name="ModelName" Type="String" ed:ValidateRequired="false" ed:Guid="b4853cf5-9988-47f4-ae64-5e3d5aa78f96" />
+  </EntityType>
+  <EntityType Name="SUV" BaseType="Model.Car" devart:InheritanceType="TablePerConcreteType" ed:InheritanceGuid="a6082a18-74c4-4062-b0b0-f036d572a23b" ed:Guid="f5ac7f1b-44be-4fcd-8e73-ca744dc3c523">
+    <Property Name="SuvType" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="97e449a4-b77f-4cf4-8476-7ad05c155cf0" />
+  </EntityType>
+  <EntityType Name="Salon" BaseType="Model.Car" devart:InheritanceType="TablePerConcreteType" ed:InheritanceGuid="bb6ae1ed-fe13-45dc-afac-09aec22b6a1e" ed:Guid="975a3de4-7d1b-4d21-b5d3-dc7316796399">
+    <Property Name="SalonType" Type="Int32" ed:ValidateRequired="false" ed:Guid="616f3866-8eba-4420-8d0a-c5e40ca6843a" />
+    <Property Name="description" Type="String" ed:ValidateRequired="false" ed:Guid="a3c496ab-4301-4bf7-9b73-0dcbcaa74a22" />
+  </EntityType>
+  <EntityType Name="Store" ed:Guid="c8e049e2-931a-45e3-9b4b-0516d3503b01">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="true" ed:Guid="94c7aa21-55fd-490b-b663-26295e0bd0e3" />
+    <Property Name="Id" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="0f372b28-0d42-41ec-9ef6-3596b5a108f3" />
+    <Property Name="Active" Type="Boolean" DefaultValue="true" ed:ValidateRequired="false" ed:Guid="3ee4888a-8900-4a3c-a9e9-0050a3ce5b0e" />
+    <NavigationProperty Name="ItemStores" Relationship="Model.Store_ItemStore" FromRole="Store" ToRole="ItemStores" ed:Guid="2f2ff305-aa24-477e-aa19-8858c91f3e9d" />
+  </EntityType>
+  <EntityType Name="Item" ed:Guid="66dd2e02-0a21-4c83-8de1-dd326579b8ed">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="a448d2b6-f95a-4dea-befe-2b2a8f0867ac" />
+    <Property Name="ArDescription" Type="String" MaxLength="200" Unicode="true" ed:ValidateMaxLength="200" ed:ValidateRequired="false" ed:Guid="3cdad8e6-ed37-46f9-ae11-0ebf31fb5712" />
+    <Property Name="Category" Type="String" MaxLength="100" Unicode="true" ed:ValidateMaxLength="100" ed:ValidateRequired="false" ed:Guid="e2c3701d-3dd3-44f1-9eed-53641a82461c" />
+    <Property Name="EnDescription" Type="String" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="false" ed:Guid="4e1c14aa-b962-4a34-81ca-77b1cb3f79e3" />
+    <Property Name="RowVersion" Type="DateTime" Nullable="false" ConcurrencyMode="Fixed" ed:ValidateRequired="true" ed:Guid="00af2a73-f6be-4fc3-a1b7-9f60d4b92c22" />
+    <NavigationProperty Name="ItemStores" Relationship="Model.Item_ItemStore" FromRole="Item" ToRole="ItemStores" ed:Guid="d2776bea-2f5f-46d4-9d99-be5e350b1a7c" />
+  </EntityType>
+  <EntityType Name="Medicine" BaseType="Model.Item" devart:InheritanceType="TablePerType" ed:InheritanceGuid="88b429a4-ff02-42e4-860c-192c286c362b" ed:Guid="f915c0bd-a72b-443b-adaa-c1e6f975f1da">
+    <Property Name="ScentificName" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="d4ef43dd-8fc1-4f52-8bb7-9c19c31097b6" />
+    <Property Name="ExpireDate" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="c1938feb-56a0-4280-9b06-ed5c294f8a3e" />
+    <Property Name="MedicalGroup" Type="String" ed:ValidateRequired="false" ed:Guid="f2a8a841-cb19-4c14-a540-5fe8104c1c9b" />
+    <Property Name="BatchNo" Type="String" ed:ValidateRequired="false" ed:Guid="181f1ccf-4922-4d80-85d1-9c95199f7894" />
+  </EntityType>
+  <EntityType Name="Book" BaseType="Model.Item" devart:InheritanceType="TablePerType" ed:InheritanceGuid="cb1e6196-04d8-42a2-989e-8ba047b1cc63" ed:Guid="1f2d49e0-3f96-4dd7-a984-fcd4556e7329">
+    <Property Name="ISBN" Type="String" Nullable="false" MaxLength="12" ed:ValidateMaxLength="12" ed:ValidateRequired="true" ed:Guid="db308d1e-2be3-4c92-b7d7-a7a6583f219b" />
+    <Property Name="PublisherId" Type="Int32" ed:ValidateRequired="true" ed:Guid="4db7262a-7201-4e8b-85a6-43166d9c345e" />
+    <NavigationProperty Name="Publisher" Relationship="Model.Publisher_Book" FromRole="Books" ToRole="Publisher" ed:Guid="99349fb1-8662-4159-b512-d3da5d35d100" />
+    <NavigationProperty Name="Authors" Relationship="Model.Author_Book" FromRole="Books" ToRole="Authors" ed:Guid="cda40b6f-3d5f-4ba3-9ac3-c6445fb0ddf8" />
+  </EntityType>
+  <EntityType Name="Publisher" ed:Guid="8f4a0597-ee9c-4248-84f4-b96d992d58ea">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="be2d6fe8-a764-45e5-8a79-78c8ff3df9d7" />
+    <Property Name="Name" Type="String" Nullable="false" ed:ValidateRequired="true" ed:Guid="48629fca-e5d2-4453-9a69-ec0add1186a0" />
+    <NavigationProperty Name="Books" Relationship="Model.Publisher_Book" FromRole="Publisher" ToRole="Books" ed:Guid="cc2aa8cf-a994-4b9a-ab3a-e04c4d297e61" />
+  </EntityType>
+  <EntityType Name="Author" ed:Guid="4aafd78c-8152-4265-9ae6-0aaac1cc30fb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="044f9265-07bf-4951-91a4-55567774c890" />
+    <Property Name="Name" Type="String" Nullable="false" ed:ValidateRequired="true" ed:Guid="f47c634f-0a12-4894-9666-be83ce7dd6f1" />
+    <NavigationProperty Name="Books" Relationship="Model.Author_Book" FromRole="Authors" ToRole="Books" ed:Guid="22c6395e-7c49-4b08-b2a8-4fef136b9da2" />
+  </EntityType>
+  <EntityType Name="ItemStore" ed:Guid="b7033f8a-9603-43ce-8e52-a6ee37bcfcd0">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="0ccaa4e6-079f-43d8-958d-df01c2f941e7" />
+    <Property Name="MinLimit" Type="Int32" Nullable="false" DefaultValue="0" ed:ValidateRequired="true" ed:Guid="66d0ad0e-ca4a-4afd-9a57-a91c99ba3f68" />
+    <Property Name="MaxLimit" Type="Int32" Nullable="false" DefaultValue="0" ed:ValidateRequired="true" ed:Guid="de0c6e87-11a5-49f8-ac94-f62c334b46f7" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" DefaultValue="0" ed:ValidateRequired="true" ed:Guid="1015ba56-1103-4b30-9934-5e14730667b7" />
+    <Property Name="ItemId" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="e3ff5259-fa4d-40a0-8056-39b45228b3b1" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="1906ca8b-4ce6-4654-af38-6c442bd82306" />
+    <NavigationProperty Name="Item" Relationship="Model.Item_ItemStore" FromRole="ItemStores" ToRole="Item" ed:Guid="1c10285d-9be7-4c06-83b1-1e272359ba23" />
+    <NavigationProperty Name="Store" Relationship="Model.Store_ItemStore" FromRole="ItemStores" ToRole="Store" ed:Guid="19ecc95b-2c37-48ef-a02f-1b6fd92f09d6" />
+  </EntityType>
+  <Association Name="Publisher_Book" ed:Guid="1a803369-7a90-44ec-af5e-8b50e4fa12a4">
+    <End Role="Publisher" Type="Model.Publisher" Multiplicity="0..1" />
+    <End Role="Books" Type="Model.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publisher">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Books">
+        <PropertyRef Name="PublisherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Author_Book" ed:Guid="b2314fd4-6c66-44c9-83f1-30b4b40c9a97">
+    <End Role="Authors" Type="Model.Author" Multiplicity="*" />
+    <End Role="Books" Type="Model.Book" Multiplicity="*" />
+  </Association>
+  <Association Name="Item_ItemStore" ed:Guid="4de13492-9e6e-45e6-9df1-df55ed7611a8">
+    <End Role="Item" Type="Model.Item" Multiplicity="1" />
+    <End Role="ItemStores" Type="Model.ItemStore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemStores">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Store_ItemStore" ed:Guid="8ca1d45e-a8ec-4bcb-ac3d-25b69ebc97c0">
+    <End Role="Store" Type="Model.Store" Multiplicity="1" />
+    <End Role="ItemStores" Type="Model.ItemStore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemStores">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

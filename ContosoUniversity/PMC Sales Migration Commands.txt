@@ -1,0 +1,4 @@
+﻿get-help Enable-Migrations
+Enable-Migrations -ContextTypeName SalesContext -MigrationsDirectory SalesMigration
+add-migration -ConfigurationTypeName ContosoUniversity.SalesMigration.Configuration
+update-database -ConfigurationTypeName ContosoUniversity.SalesMigration.Configuration -Verbose

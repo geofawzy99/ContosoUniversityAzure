@@ -1,0 +1,53 @@
+﻿@model ContosoUniversity.DAL.SalesModel.ItemStore
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="control-group">
+	@Html.LabelFor(model => model.MinLimit, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.MinLimit)
+		@Html.ValidationMessageFor(model => model.MinLimit)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.MaxLimit, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.MaxLimit)
+		@Html.ValidationMessageFor(model => model.MaxLimit)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.Quantity, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.Quantity)
+		@Html.ValidationMessageFor(model => model.Quantity)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.ItemId, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.ItemId)
+		@Html.ValidationMessageFor(model => model.ItemId)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.StoreId, new { @class = "control-label" })
+	<div class="controls">
+		@Html.EditorFor(model => model.StoreId)
+		@Html.ValidationMessageFor(model => model.StoreId)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.Item, new { @class = "control-label" })
+	<div class="controls">
+		@Html.DropDownListFor(model => model.ItemId, (IEnumerable<SelectListItem>)ViewBag.Item)
+		@Html.ValidationMessageFor(model => model.Item)
+	</div>
+</div>
+<div class="control-group">
+	@Html.LabelFor(model => model.Store, new { @class = "control-label" })
+	<div class="controls">
+		@Html.DropDownListFor(model => model.StoreId, (IEnumerable<SelectListItem>)ViewBag.Store)
+		@Html.ValidationMessageFor(model => model.Store)
+	</div>
+</div>

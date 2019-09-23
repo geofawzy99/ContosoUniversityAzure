@@ -1,0 +1,499 @@
+﻿<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ContosoUniversity.DAL.SalesModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:devart="http://devart.com/schemas/edml/StorageSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="KpcEntitiesStoreContainer">
+          <EntitySet Name="SUVs" EntityType="ContosoUniversity.DAL.SalesModel.Store.SUV" store:Type="Tables" Schema="dbo" Table="SUV" />
+          <EntitySet Name="Salons" EntityType="ContosoUniversity.DAL.SalesModel.Store.Salon" store:Type="Tables" Schema="dbo" Table="Salon" />
+          <EntitySet Name="Stores" EntityType="ContosoUniversity.DAL.SalesModel.Store.Store" store:Type="Tables" Schema="dbo" Table="Store" />
+          <EntitySet Name="Items" EntityType="ContosoUniversity.DAL.SalesModel.Store.Item" store:Type="Tables" Schema="dbo" Table="Item" />
+          <EntitySet Name="Medicines" EntityType="ContosoUniversity.DAL.SalesModel.Store.Medicine" store:Type="Tables" Schema="dbo" Table="Medicine" />
+          <EntitySet Name="Books" EntityType="ContosoUniversity.DAL.SalesModel.Store.Book" store:Type="Tables" Schema="dbo" Table="Book" />
+          <EntitySet Name="Publishers" EntityType="ContosoUniversity.DAL.SalesModel.Store.Publisher" store:Type="Tables" Schema="dbo" Table="Publisher" />
+          <EntitySet Name="Authors" EntityType="ContosoUniversity.DAL.SalesModel.Store.Author" store:Type="Tables" Schema="dbo" Table="Author" />
+          <EntitySet Name="Authors_Books" EntityType="ContosoUniversity.DAL.SalesModel.Store.Authors_Books" store:Type="Tables" Schema="dbo" Table="Authors_Books" />
+          <EntitySet Name="ItemStores" EntityType="ContosoUniversity.DAL.SalesModel.Store.ItemStores" store:Type="Tables" Schema="dbo" Table="ItemStores" />
+          <AssociationSet Name="FK_Medicines_Items" Association="ContosoUniversity.DAL.SalesModel.Store.FK_Medicines_Items">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="Medicine" EntitySet="Medicines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Books_Items" Association="ContosoUniversity.DAL.SalesModel.Store.FK_Books_Items">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="Book" EntitySet="Books" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Books_Publishers" Association="ContosoUniversity.DAL.SalesModel.Store.FK_Books_Publishers">
+            <End Role="Publisher" EntitySet="Publishers" />
+            <End Role="Book" EntitySet="Books" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Authors_Books_Authors" Association="ContosoUniversity.DAL.SalesModel.Store.FK_Authors_Books_Authors">
+            <End Role="Author" EntitySet="Authors" />
+            <End Role="Authors_Books" EntitySet="Authors_Books" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Authors_Books_Books" Association="ContosoUniversity.DAL.SalesModel.Store.FK_Authors_Books_Books">
+            <End Role="Book" EntitySet="Books" />
+            <End Role="Authors_Books" EntitySet="Authors_Books" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemStores_Items" Association="ContosoUniversity.DAL.SalesModel.Store.FK_ItemStores_Items">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="ItemStores" EntitySet="ItemStores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemStores_Stores" Association="ContosoUniversity.DAL.SalesModel.Store.FK_ItemStores_Stores">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="ItemStores" EntitySet="ItemStores" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="SUV">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ModelName" Type="varchar" MaxLength="8000" />
+          <Property Name="BrandId" Type="int" />
+          <Property Name="ManufactureYear" Type="int" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="SuvType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Salon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ModelName" Type="varchar" MaxLength="8000" />
+          <Property Name="BrandId" Type="int" />
+          <Property Name="Description" Type="varchar" MaxLength="8000" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="SalonType" Type="int" />
+          <Property Name="ManufactureYear" Type="int" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Active" Type="bit" DefaultValue="true" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ArDescription" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Category" Type="nvarchar" MaxLength="100" />
+          <Property Name="EnDescription" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="RowVersion" Type="datetime" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Medicine">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Nullable="false" />
+          <Property Name="ScentificName" Type="nvarchar" MaxLength="4000" />
+          <Property Name="ExpireDate" Type="datetime" Nullable="false" />
+          <Property Name="MedicalGroup" Type="varchar" MaxLength="8000" />
+          <Property Name="BatchNo" Type="varchar" MaxLength="8000" />
+        </EntityType>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Nullable="false" />
+          <Property Name="ISBN" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="Langauge" Type="int" Nullable="false" />
+          <Property Name="PublisherId" Type="int" />
+        </EntityType>
+        <EntityType Name="Publisher">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="8000" />
+        </EntityType>
+        <EntityType Name="Author">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="8000" />
+        </EntityType>
+        <EntityType Name="Authors_Books">
+          <Key>
+            <PropertyRef Name="AuthorId" />
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Name="AuthorId" Type="int" Nullable="false" />
+          <Property Name="ItemId" Type="numeric" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemStores">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MinLimit" Type="int" Nullable="false" DefaultValue="0" />
+          <Property Name="MaxLimit" Type="int" Nullable="false" DefaultValue="0" />
+          <Property Name="Quantity" Type="int" Nullable="false" DefaultValue="0" />
+          <Property Name="ItemId" Type="numeric" Nullable="false" />
+          <Property Name="StoreId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Medicines_Items">
+          <End Role="Item" Type="ContosoUniversity.DAL.SalesModel.Store.Item" Multiplicity="1" />
+          <End Role="Medicine" Type="ContosoUniversity.DAL.SalesModel.Store.Medicine" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Medicine">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Books_Items">
+          <End Role="Item" Type="ContosoUniversity.DAL.SalesModel.Store.Item" Multiplicity="1" />
+          <End Role="Book" Type="ContosoUniversity.DAL.SalesModel.Store.Book" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Book">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Books_Publishers">
+          <End Role="Publisher" Type="ContosoUniversity.DAL.SalesModel.Store.Publisher" Multiplicity="0..1" />
+          <End Role="Book" Type="ContosoUniversity.DAL.SalesModel.Store.Book" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publisher">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Book">
+              <PropertyRef Name="PublisherId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Authors_Books_Authors">
+          <End Role="Author" Type="ContosoUniversity.DAL.SalesModel.Store.Author" Multiplicity="1" />
+          <End Role="Authors_Books" Type="ContosoUniversity.DAL.SalesModel.Store.Authors_Books" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Author">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Authors_Books">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Authors_Books_Books">
+          <End Role="Book" Type="ContosoUniversity.DAL.SalesModel.Store.Book" Multiplicity="1" />
+          <End Role="Authors_Books" Type="ContosoUniversity.DAL.SalesModel.Store.Authors_Books" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Book">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Authors_Books">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemStores_Items">
+          <End Role="Item" Type="ContosoUniversity.DAL.SalesModel.Store.Item" Multiplicity="1" />
+          <End Role="ItemStores" Type="ContosoUniversity.DAL.SalesModel.Store.ItemStores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemStores">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemStores_Stores">
+          <End Role="Store" Type="ContosoUniversity.DAL.SalesModel.Store.Store" Multiplicity="1" />
+          <End Role="ItemStores" Type="ContosoUniversity.DAL.SalesModel.Store.ItemStores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemStores">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ContosoUniversity.DAL.SalesModel" Alias="Self" d4p1:ViewGeneration="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:devart="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" annotation:UseStrongSpatialTypes="false" xmlns:d4p1="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SalesContext" annotation:LazyLoadingEnabled="true" ed:Guid="c8fa8f7f-2428-40f0-801c-73ec78087e8e">
+          <EntitySet Name="Cars" EntityType="ContosoUniversity.DAL.SalesModel.Car" />
+          <EntitySet Name="Stores" EntityType="ContosoUniversity.DAL.SalesModel.Store" />
+          <EntitySet Name="Items" EntityType="ContosoUniversity.DAL.SalesModel.Item" />
+          <EntitySet Name="Publishers" EntityType="ContosoUniversity.DAL.SalesModel.Publisher" />
+          <EntitySet Name="Authors" EntityType="ContosoUniversity.DAL.SalesModel.Author" />
+          <EntitySet Name="ItemStores" EntityType="ContosoUniversity.DAL.SalesModel.ItemStore" />
+          <AssociationSet Name="Publisher_BookSet" Association="ContosoUniversity.DAL.SalesModel.Publisher_Book">
+            <End Role="Publisher" EntitySet="Publishers" />
+            <End Role="Books" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="Author_BookSet" Association="ContosoUniversity.DAL.SalesModel.Author_Book">
+            <End Role="Authors" EntitySet="Authors" />
+            <End Role="Books" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="Item_ItemStoreSet" Association="ContosoUniversity.DAL.SalesModel.Item_ItemStore">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="ItemStores" EntitySet="ItemStores" />
+          </AssociationSet>
+          <AssociationSet Name="Store_ItemStoreSet" Association="ContosoUniversity.DAL.SalesModel.Store_ItemStore">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="ItemStores" EntitySet="ItemStores" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Car" devart:InheritanceModifier="Abstract" Abstract="true" ed:Guid="fce66017-9515-4697-923b-da9ec1126216">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="a3f9d044-6762-4ed3-b1c7-7f6e13488e15" />
+          <Property Name="ManufactureYear" Type="Int32" ed:ValidateRequired="false" ed:Guid="ef09920a-9217-4bb4-9459-4b7dcf0e2f5a" />
+          <Property Name="BrandId" Type="Int32" ed:ValidateRequired="false" ed:Guid="58a6a317-c06f-48bb-b4fc-16b078cc2a80" />
+          <Property Name="ModelName" Type="String" ed:ValidateRequired="false" ed:Guid="b4853cf5-9988-47f4-ae64-5e3d5aa78f96" />
+        </EntityType>
+        <EntityType Name="SUV" BaseType="ContosoUniversity.DAL.SalesModel.Car" devart:InheritanceType="TablePerConcreteType" ed:InheritanceGuid="a6082a18-74c4-4062-b0b0-f036d572a23b" ed:Guid="f5ac7f1b-44be-4fcd-8e73-ca744dc3c523">
+          <Property Name="SuvType" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="97e449a4-b77f-4cf4-8476-7ad05c155cf0" />
+        </EntityType>
+        <EntityType Name="Salon" BaseType="ContosoUniversity.DAL.SalesModel.Car" devart:InheritanceType="TablePerConcreteType" ed:InheritanceGuid="bb6ae1ed-fe13-45dc-afac-09aec22b6a1e" ed:Guid="975a3de4-7d1b-4d21-b5d3-dc7316796399">
+          <Property Name="SalonType" Type="Int32" ed:ValidateRequired="false" ed:Guid="616f3866-8eba-4420-8d0a-c5e40ca6843a" />
+          <Property Name="description" Type="String" ed:ValidateRequired="false" ed:Guid="a3c496ab-4301-4bf7-9b73-0dcbcaa74a22" />
+        </EntityType>
+        <EntityType Name="Store" ed:Guid="c8e049e2-931a-45e3-9b4b-0516d3503b01">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="true" ed:Guid="94c7aa21-55fd-490b-b663-26295e0bd0e3" />
+          <Property Name="Id" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="0f372b28-0d42-41ec-9ef6-3596b5a108f3" />
+          <Property Name="Active" Type="Boolean" DefaultValue="true" ed:ValidateRequired="false" ed:Guid="3ee4888a-8900-4a3c-a9e9-0050a3ce5b0e" />
+          <NavigationProperty Name="ItemStores" Relationship="ContosoUniversity.DAL.SalesModel.Store_ItemStore" FromRole="Store" ToRole="ItemStores" ed:Guid="2f2ff305-aa24-477e-aa19-8858c91f3e9d" />
+        </EntityType>
+        <EntityType Name="Item" ed:Guid="66dd2e02-0a21-4c83-8de1-dd326579b8ed">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="a448d2b6-f95a-4dea-befe-2b2a8f0867ac" />
+          <Property Name="ArDescription" Type="String" Nullable="false" MaxLength="200" Unicode="true" ed:ValidateMaxLength="200" ed:ValidateRequired="true" ed:Guid="3cdad8e6-ed37-46f9-ae11-0ebf31fb5712" />
+          <Property Name="EnDescription" Type="String" Nullable="false" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="true" ed:Guid="4e1c14aa-b962-4a34-81ca-77b1cb3f79e3" />
+          <Property Name="Category" Type="String" MaxLength="100" Unicode="true" ed:ValidateMaxLength="100" ed:ValidateRequired="false" ed:Guid="e2c3701d-3dd3-44f1-9eed-53641a82461c" />
+          <Property Name="RowVersion" Type="DateTime" ed:ValidateRequired="false" ed:Guid="00af2a73-f6be-4fc3-a1b7-9f60d4b92c22" />
+          <Property Name="Price" Type="Decimal" ed:ValidateRequired="false" ed:Guid="84922363-ec53-4752-b8c8-41cbf6f06c7a" />
+          <NavigationProperty Name="ItemStores" Relationship="ContosoUniversity.DAL.SalesModel.Item_ItemStore" FromRole="Item" ToRole="ItemStores" ed:Guid="d2776bea-2f5f-46d4-9d99-be5e350b1a7c" />
+        </EntityType>
+        <EntityType Name="Medicine" BaseType="ContosoUniversity.DAL.SalesModel.Item" devart:InheritanceType="TablePerType" ed:InheritanceGuid="88b429a4-ff02-42e4-860c-192c286c362b" ed:Guid="f915c0bd-a72b-443b-adaa-c1e6f975f1da">
+          <Property Name="ScentificName" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="d4ef43dd-8fc1-4f52-8bb7-9c19c31097b6" />
+          <Property Name="ExpireDate" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="c1938feb-56a0-4280-9b06-ed5c294f8a3e" />
+          <Property Name="MedicalGroup" Type="String" ed:ValidateRequired="false" ed:Guid="f2a8a841-cb19-4c14-a540-5fe8104c1c9b" />
+          <Property Name="BatchNo" Type="String" ed:ValidateRequired="false" ed:Guid="181f1ccf-4922-4d80-85d1-9c95199f7894" />
+        </EntityType>
+        <EntityType Name="Book" BaseType="ContosoUniversity.DAL.SalesModel.Item" devart:InheritanceType="TablePerType" ed:InheritanceGuid="cb1e6196-04d8-42a2-989e-8ba047b1cc63" ed:Guid="1f2d49e0-3f96-4dd7-a984-fcd4556e7329">
+          <Property Name="ISBN" Type="String" Nullable="false" MaxLength="12" ed:ValidateMaxLength="12" ed:ValidateRequired="true" ed:Guid="db308d1e-2be3-4c92-b7d7-a7a6583f219b" />
+          <Property Name="PublisherId" Type="Int32" ed:ValidateRequired="false" ed:Guid="4db7262a-7201-4e8b-85a6-43166d9c345e" />
+          <Property Name="Langauge" Type="ContosoUniversity.DAL.SalesModel.BookLangauge" Nullable="false" ed:ValidateRequired="true" ed:Guid="8f13c281-0d05-4a14-95ee-d30c549d1e37" />
+          <NavigationProperty Name="Publisher" Relationship="ContosoUniversity.DAL.SalesModel.Publisher_Book" FromRole="Books" ToRole="Publisher" ed:Guid="99349fb1-8662-4159-b512-d3da5d35d100" />
+          <NavigationProperty Name="Authors" Relationship="ContosoUniversity.DAL.SalesModel.Author_Book" FromRole="Books" ToRole="Authors" ed:Guid="cda40b6f-3d5f-4ba3-9ac3-c6445fb0ddf8" />
+        </EntityType>
+        <EntityType Name="Publisher" ed:Guid="8f4a0597-ee9c-4248-84f4-b96d992d58ea">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="be2d6fe8-a764-45e5-8a79-78c8ff3df9d7" />
+          <Property Name="Name" Type="String" Nullable="false" ed:ValidateRequired="true" ed:Guid="48629fca-e5d2-4453-9a69-ec0add1186a0" />
+          <NavigationProperty Name="Books" Relationship="ContosoUniversity.DAL.SalesModel.Publisher_Book" FromRole="Publisher" ToRole="Books" ed:Guid="cc2aa8cf-a994-4b9a-ab3a-e04c4d297e61" />
+        </EntityType>
+        <EntityType Name="Author" ed:Guid="4aafd78c-8152-4265-9ae6-0aaac1cc30fb">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="044f9265-07bf-4951-91a4-55567774c890" />
+          <Property Name="Name" Type="String" Nullable="false" ed:ValidateRequired="true" ed:Guid="f47c634f-0a12-4894-9666-be83ce7dd6f1" />
+          <NavigationProperty Name="Books" Relationship="ContosoUniversity.DAL.SalesModel.Author_Book" FromRole="Authors" ToRole="Books" ed:Guid="22c6395e-7c49-4b08-b2a8-4fef136b9da2" />
+        </EntityType>
+        <EntityType Name="ItemStore" ed:Guid="b7033f8a-9603-43ce-8e52-a6ee37bcfcd0">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="0ccaa4e6-079f-43d8-958d-df01c2f941e7" />
+          <Property Name="MinLimit" Type="Int32" Nullable="false" DefaultValue="0" ed:ValidateRequired="true" ed:Guid="66d0ad0e-ca4a-4afd-9a57-a91c99ba3f68" />
+          <Property Name="MaxLimit" Type="Int32" Nullable="false" DefaultValue="0" ed:ValidateRequired="true" ed:Guid="de0c6e87-11a5-49f8-ac94-f62c334b46f7" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" DefaultValue="0" ed:ValidateRequired="true" ed:Guid="1015ba56-1103-4b30-9934-5e14730667b7" />
+          <Property Name="ItemId" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="e3ff5259-fa4d-40a0-8056-39b45228b3b1" />
+          <Property Name="StoreId" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="1906ca8b-4ce6-4654-af38-6c442bd82306" />
+          <NavigationProperty Name="Item" Relationship="ContosoUniversity.DAL.SalesModel.Item_ItemStore" FromRole="ItemStores" ToRole="Item" ed:Guid="1c10285d-9be7-4c06-83b1-1e272359ba23" />
+          <NavigationProperty Name="Store" Relationship="ContosoUniversity.DAL.SalesModel.Store_ItemStore" FromRole="ItemStores" ToRole="Store" ed:Guid="19ecc95b-2c37-48ef-a02f-1b6fd92f09d6" />
+        </EntityType>
+        <EnumType Name="BookLangauge" ed:Guid="a32566b1-d26f-4c90-a934-8830d1eeaaa3">
+          <Member Name="Arabic" Value="1" ed:Guid="aaf69fae-4c27-43cf-9637-a2beab2443b5" />
+          <Member Name="English" Value="2" ed:Guid="768c1e54-2ef2-4e8e-a966-f58d197d01cf" />
+          <Member Name="Frensh" Value="3" ed:Guid="8d37c907-a884-4114-9dae-67b604bac6df" />
+        </EnumType>
+        <Association Name="Publisher_Book" ed:Guid="1a803369-7a90-44ec-af5e-8b50e4fa12a4">
+          <End Role="Publisher" Type="ContosoUniversity.DAL.SalesModel.Publisher" Multiplicity="0..1" />
+          <End Role="Books" Type="ContosoUniversity.DAL.SalesModel.Book" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publisher">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Books">
+              <PropertyRef Name="PublisherId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Author_Book" ed:Guid="b2314fd4-6c66-44c9-83f1-30b4b40c9a97">
+          <End Role="Authors" Type="ContosoUniversity.DAL.SalesModel.Author" Multiplicity="*" />
+          <End Role="Books" Type="ContosoUniversity.DAL.SalesModel.Book" Multiplicity="*" />
+        </Association>
+        <Association Name="Item_ItemStore" ed:Guid="4de13492-9e6e-45e6-9df1-df55ed7611a8">
+          <End Role="Item" Type="ContosoUniversity.DAL.SalesModel.Item" Multiplicity="1" />
+          <End Role="ItemStores" Type="ContosoUniversity.DAL.SalesModel.ItemStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemStores">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Store_ItemStore" ed:Guid="8ca1d45e-a8ec-4bcb-ac3d-25b69ebc97c0">
+          <End Role="Store" Type="ContosoUniversity.DAL.SalesModel.Store" Multiplicity="1" />
+          <End Role="ItemStores" Type="ContosoUniversity.DAL.SalesModel.ItemStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemStores">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- MSL content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KpcEntitiesStoreContainer" CdmEntityContainer="SalesContext">
+          <EntitySetMapping Name="Cars">
+            <EntityTypeMapping TypeName="ContosoUniversity.DAL.SalesModel.SUV">
+              <MappingFragment StoreEntitySet="SUVs">
+                <ScalarProperty Name="SuvType" ColumnName="SuvType" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ManufactureYear" ColumnName="ManufactureYear" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="ContosoUniversity.DAL.SalesModel.Salon">
+              <MappingFragment StoreEntitySet="Salons">
+                <ScalarProperty Name="SalonType" ColumnName="SalonType" />
+                <ScalarProperty Name="description" ColumnName="Description" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ManufactureYear" ColumnName="ManufactureYear" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="ContosoUniversity.DAL.SalesModel.Store">
+              <MappingFragment StoreEntitySet="Stores">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="IsTypeOf(ContosoUniversity.DAL.SalesModel.Item)">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ArDescription" ColumnName="ArDescription" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="EnDescription" ColumnName="EnDescription" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="ContosoUniversity.DAL.SalesModel.Medicine">
+              <MappingFragment StoreEntitySet="Medicines">
+                <ScalarProperty Name="ScentificName" ColumnName="ScentificName" />
+                <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+                <ScalarProperty Name="MedicalGroup" ColumnName="MedicalGroup" />
+                <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="ContosoUniversity.DAL.SalesModel.Book">
+              <MappingFragment StoreEntitySet="Books">
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PublisherId" ColumnName="PublisherId" />
+                <ScalarProperty Name="Langauge" ColumnName="Langauge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Publishers">
+            <EntityTypeMapping TypeName="ContosoUniversity.DAL.SalesModel.Publisher">
+              <MappingFragment StoreEntitySet="Publishers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Authors">
+            <EntityTypeMapping TypeName="ContosoUniversity.DAL.SalesModel.Author">
+              <MappingFragment StoreEntitySet="Authors">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemStores">
+            <EntityTypeMapping TypeName="ContosoUniversity.DAL.SalesModel.ItemStore">
+              <MappingFragment StoreEntitySet="ItemStores">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MinLimit" ColumnName="MinLimit" />
+                <ScalarProperty Name="MaxLimit" ColumnName="MaxLimit" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Author_BookSet" TypeName="ContosoUniversity.DAL.SalesModel.Author_Book" StoreEntitySet="Authors_Books">
+            <EndProperty Name="Authors">
+              <ScalarProperty Name="Id" ColumnName="AuthorId" />
+            </EndProperty>
+            <EndProperty Name="Books">
+              <ScalarProperty Name="Id" ColumnName="ItemId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <edmx:Diagrams>
+      <Diagram Name="Main" />
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
